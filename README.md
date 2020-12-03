@@ -1,2 +1,5 @@
-# unifacef-dia-2
-aula 2 - 05/12/2020
+Olá Turma,
+
+Este repo utilizaremnos no nosso segundo dia de aula (05/12/2020).
+
+
