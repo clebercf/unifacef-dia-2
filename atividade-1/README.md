@@ -15,8 +15,8 @@ Pré-requisito
 > sudo apt-get install python3-pip
 
 * instalar docker
-sudo snap install docker     # version 19.03.11, or
-sudo apt  install docker.io  # version 19.03.8-0ubuntu1.20.04.1
+> sudo snap install docker     # version 19.03.11, or
+> sudo apt  install docker.io  # version 19.03.8-0ubuntu1.20.04.1
 
 * rodar o container do rabbitmq
 > sudo mkdir -p /docker/rabbitmq/data (salvar dados fora do container)
