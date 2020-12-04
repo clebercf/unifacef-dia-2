@@ -69,6 +69,7 @@ rabbitmqctl list_queues name messages_ready messages_unacknowledged
 rabbitmqctl set_permissions -p "custom-vhost" "guest" ".*" ".*" ".*"
 
 * demonstrar
+> interface web
 > producing / consuming
 > balanceamento por Round-robin
 > deburrar os workers, mostrar a fila e acumula na fila
