@@ -37,8 +37,8 @@ services:
       test: [ "CMD", "nc", "-z", "localhost", "5672" ]
       interval: 5s
       timeout: 15s
-      retries: 3      
-        
+      retries: 3
+
   weatherbackend:
     build: ./weatherbackend
     depends_on:
@@ -50,7 +50,13 @@ services:
       - "LOGSTASH_HOST=host.docker.internal"
     tty:
       true
-    restart: on-failure
+    restart:
+      unless-stopped
+    healthcheck:
+      test: [ "CMD", "nc", "-z", "localhost", "8090" ]
+      interval: 5s
+      timeout: 15s
+      retries: 3
 
 
 - subir com docker-compose
@@ -75,3 +81,24 @@ guest & guest
 
 - verificar no logstash
 > http://localhost:5601/
+
+- modificar docker-compose e inserir weatherservice
+
+  weatherservice:
+    build: ./weatherservice
+    depends_on:
+      - rabbitmq
+    ports:
+      - "8095:8095"
+    environment:
+      - "SPRING_RABBITMQ_HOST=rabbitmq"
+      - "LOGSTASH_HOST=host.docker.internal"
+    tty:
+      true
+    restart:
+      unless-stopped
+    healthcheck:
+      test: [ "CMD", "nc", "-z", "localhost", "8095" ]
+      interval: 5s
+      timeout: 15s
+      retries: 3
