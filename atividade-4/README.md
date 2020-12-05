@@ -1,7 +1,7 @@
 ----------------------------------------------------------
 Atividade 4 - Execução
 ----------------------------------------------------------
-https://www.rabbitmq.com/tutorials/tutorial-five-python.html
+https://www.rabbitmq.com/tutorials/tutorial-six-python.html
 
 * demonstrar
 - ativar server side
