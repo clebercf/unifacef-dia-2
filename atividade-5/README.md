@@ -54,6 +54,25 @@ services:
       timeout: 15s
       retries: 3
 
+  weatherservice:
+    build: ./weatherservice
+    depends_on:
+      - rabbitmq
+    ports:
+      - "8095:8095"
+    environment:
+      - "SPRING_RABBITMQ_HOST=rabbitmq"
+      - "LOGSTASH_HOST=host.docker.internal"
+    tty:
+      true
+    restart:
+      unless-stopped
+    healthcheck:
+      test: [ "CMD", "nc", "-z", "localhost", "8095" ]
+      interval: 5s
+      timeout: 15s
+      retries: 3
+
 
 - subir com docker-compose
 > sudo docker-compose up -d (baixar imagens e inicia os containers)
@@ -79,26 +98,6 @@ guest & guest
 > http://localhost:5601/
 
 - modificar docker-compose e inserir weatherservice
-
-  weatherservice:
-    build: ./weatherservice
-    depends_on:
-      - rabbitmq
-    ports:
-      - "8095:8095"
-    environment:
-      - "SPRING_RABBITMQ_HOST=rabbitmq"
-      - "LOGSTASH_HOST=host.docker.internal"
-    tty:
-      true
-    restart:
-      unless-stopped
-    healthcheck:
-      test: [ "CMD", "nc", "-z", "localhost", "8095" ]
-      interval: 5s
-      timeout: 15s
-      retries: 3
-
 
 ----------------------------------------------------------
 git clone https://github.com/jonashackt/docker-elk.git
