@@ -14,6 +14,9 @@ git clone https://github.com/jonashackt/spring-rabbitmq-messaging-microservices
 - parar docker RabbitMQ
 > sudo docker stop rabbitmq
 
+(opcional, remover conatiner)
+> sudo docker rm rabbitmq
+
 - build do projeto
 mvn install -DskipTests (demora um pouco - download de pacotes)
 
