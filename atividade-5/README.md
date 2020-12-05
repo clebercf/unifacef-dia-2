@@ -1,6 +1,5 @@
 ----------------------------------------------------------
 Atividade 5 - Execução
-
 ----------------------------------------------------------
 git clone https://github.com/jonashackt/spring-rabbitmq-messaging-microservices
 ----------------------------------------------------------
@@ -108,3 +107,7 @@ git clone https://github.com/jonashackt/docker-elk.git
 - iniciar com docker-compose
 (se necessário, sudo snap install docker)
 > sudo docker-compose up -d
+
+
+- listar portas "em escuta" no computador
+sudo lsof -i -P -n | grep LISTEN 
