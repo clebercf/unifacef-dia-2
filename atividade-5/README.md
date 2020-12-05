@@ -1,12 +1,6 @@
 ----------------------------------------------------------
 Atividade 5 - Execução
-----------------------------------------------------------
-git clone https://github.com/jonashackt/docker-elk.git
-----------------------------------------------------------
 
-- iniciar com docker-compose
-(se necessário, sudo snap install docker)
-> sudo docker-compose up -d
 ----------------------------------------------------------
 git clone https://github.com/jonashackt/spring-rabbitmq-messaging-microservices
 ----------------------------------------------------------
@@ -105,3 +99,12 @@ guest & guest
       interval: 5s
       timeout: 15s
       retries: 3
+
+
+----------------------------------------------------------
+git clone https://github.com/jonashackt/docker-elk.git
+----------------------------------------------------------
+
+- iniciar com docker-compose
+(se necessário, sudo snap install docker)
+> sudo docker-compose up -d
